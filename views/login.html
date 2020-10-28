@@ -1,0 +1,102 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+<style>
+    .login-container {
+        margin: 30 auto;
+    }
+    
+    .login-form-1 {
+        padding: 5%;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .login-form-1 h3 {
+        text-align: center;
+        color: #333;
+    }
+    
+    .btnSubmit {
+        margin-top: 2em;
+        background-color: rgb(36, 192, 62);
+        color: white;
+        width: 50%;
+        border-radius: 1rem;
+        padding: 1.5%;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .btnSubmit:hover {
+        background-color: rgb(33, 128, 49);
+        color: white;
+        box-shadow: 3px 3px 6px 0px rgb(90, 89, 89);
+    }
+    
+    .a-des {
+        font-size: 25px;
+        border-radius: 4px;
+        text-align: center;
+        width: 100px;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+    
+    .a-des:hover {
+        box-shadow: 3px 2px 6px 0px rgb(90, 89, 89);
+    }
+    
+    .footer-style {
+        position: absolute;
+        bottom: 0;
+        background-color: rgb(252, 243, 243);
+        height: 100px;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="a-des">
+            <a href="/" style="text-decoration: none;color:black;">Home</a>
+        </div>
+        <div class="row">
+
+            <div class="col-md-4">
+                <img src="images/img4.jpeg" style="width:100%;">
+            </div>
+            <div class="col-md-6 login-form-1">
+                <h3>Login</h3>
+                <form method="POST" action="/login_try">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Email *" value="" name="email" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Your Password *" value="" name="pass" />
+                    </div>
+                    <div class="form-group">
+                        <center><input type="submit" class="btnSubmit" value="Login" /></center>
+                    </div>
+                    <div class="form-group">
+                        <a href="#" style="text-decoration: none;color:gray">Forget Password?</a>
+                    </div>
+                </form>
+                <h5 style="color:rgb(240, 57, 57);text-align:center;text-shadow:1px 1px 1px rgb(219, 94, 94);">
+                    <%=msg%>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-style">
+        <div class="container text-center">
+            <p class="font-italic text-muted mb-0" style="margin-top: 2em;">&copy; Copyrights Gallery.com All rights reserved.</p>
+        </div>
+    </footer>
+</body>

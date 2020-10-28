@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>
+        <%=title %>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .footer-style {
+        bottom: 0;
+        background-color: rgb(252, 243, 243);
+        height: 100px;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="modal fade imag" id="imageid" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title title-style" id="exampleModalLongTitle">Gallery</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img scr="#" id="imageshow" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <a href="" download="" id="links" style="text-decoration:none;">
+                        <button class="btn btn-outline-success btn-block" style="width:100%">
+                            Free Download <i class="fa fa-cloud-download" style="font-size:25px;"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%include banner.html%>
+
+        <div class="container">
+            <div class="row">
+                <%
+            if(userData.length!=0){
+            var i=1;
+            userData.forEach(function(data){
+            %>
+                    <div class="col-md-4">
+                        <div class="card" style="margin:20 auto;">
+                            <img class="card-img-top" src="images/<%= data.image %>" alt="image" style="width:100%;height:300px;" onclick="showModelwithImage('images/<%= data.image %>')">
+                        </div>
+                    </div>
+                    <%  i++; })} %>
+            </div>
+        </div>
+        <footer class="footer-style">
+            <div class="container text-center">
+                <p class="font-italic text-muted mb-0" style="margin-top: 2em;">&copy; Copyrights Gallery.com All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+
+
+</html>
+<script>
+    function showModelwithImage(imageUrl) {
+        $('#imageid').modal('show')
+        $("#imageshow").attr('src', `${imageUrl}`)
+        document.getElementById("links").href = "" + imageUrl
+    }
+</script>
